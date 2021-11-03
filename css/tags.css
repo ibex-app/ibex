@@ -1,0 +1,23 @@
+.tags > div{
+    margin: 0;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    word-break: break-word;
+}
+.tags > div:nth-child(1){
+    /* margin-top: 0px; */
+    /* margin-right: 0px; */
+}
+
+.tags > div {
+    display: inline-block;
+    margin-right: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    background: rgba(255, 255, 255, .1);
+    padding: 9px 15px;
+}
+.tags > div.hate-col{
+    background-color: #ce0b0b7d;
+}

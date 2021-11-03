@@ -1,0 +1,10 @@
+.top-bar{
+    position: fixed;
+    top: 0;
+    left: var(--unit-size);
+    width: calc(100% - var(--unit-size));
+    height: var(--unit-size);
+    background: #2d2d2d;
+    display:flex;
+}
+

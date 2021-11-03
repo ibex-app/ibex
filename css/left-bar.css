@@ -1,0 +1,12 @@
+.left-bar {
+    width: var(--unit-size);
+    left:0;
+    top:0;
+    position: fixed;
+    height: 100%;
+    background: #2d2d2d;
+    transition: .3s;
+    z-index: 95;
+    flex-direction: column;
+    display: flex;
+}
