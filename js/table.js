@@ -79,12 +79,20 @@
         channel.tags = channel.tags ? JSON.parse('{"d":' + "['mini-set']".replaceAll("'", '"') + "}").d : []
         innerHTML = `
              <td>
-                 <div class="item-logo"><i class="fab fa-` + channel.platform + `"></i></div>
-                 <div class="item-name">` + (channel.program_title ? channel.title : '') + `</div>
+                 <div class="item-logo"><i class="` + (channel.platform == 'tv_georgia' ? 'fas' : 'fab') + ` fa-` + channel.platform + `"></i></div>
              </td>
-             <td>` + (channel.program_title || channel.title) + `</td>
+             <td>` + ((channel.program_title ? channel.program_title + ' - ' : '') +channel.title) + `</td>
              <td class="tags">` + channel.tags.map(a => '<div>' + a + '</div>') + "</td>"
-
+        
+        // innerHTML += '<td>' + Math.floor(Math.random() * 1200) + '</td>'
+        innerHTML += '<td>' + Math.floor(Math.random() * 1200) + '</td>'
+        innerHTML += '<td>' + Math.floor(Math.random() * 150) + '</td>'
+        innerHTML += '<td>' + Math.floor(Math.random() * 7000) + '</td>'
+        innerHTML += '<td>' + Math.floor(Math.random() * 1200) + '</td>'
+        innerHTML += '<td>' + Math.floor(Math.random() * 800) + '</td>'
+        innerHTML += '<td>' + Math.floor(Math.random() * 400) + '</td>'
+        innerHTML += '<td>' + Math.floor(Math.random() * 100) + '</td>'
+        
 
         row.innerHTML = innerHTML
             //  + `
