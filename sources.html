@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ibex - Dashboard</title>
+    <!-- <link href="/home/mik/Projects/mettamine/dashboard/css/main.css" rel="stylesheet" type="text/css"> -->
+    <link href="/home/mik/Projects/mettamine/dashboard/css/root.css" rel="stylesheet" type="text/css">
+    <link href="/home/mik/Projects/mettamine/dashboard/css/table.css" rel="stylesheet" type="text/css">
+    <link href="/home/mik/Projects/mettamine/dashboard/css/icon.css" rel="stylesheet" type="text/css">
+    <link href="/home/mik/Projects/mettamine/dashboard/css/top-bar.css" rel="stylesheet" type="text/css">
+    <link href="/home/mik/Projects/mettamine/dashboard/css/left-bar.css" rel="stylesheet" type="text/css">
+    <link href="/home/mik/Projects/mettamine/dashboard/css/inputs.css" rel="stylesheet" type="text/css">
+    <link href="/home/mik/Projects/mettamine/dashboard/css/tags.css" rel="stylesheet" type="text/css">
+    <link href="/home/mik/Projects/mettamine/dashboard/css/item.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    
+</head>
+<body>
+    <div class="left-bar">
+        <div class="icon top logo" title="iBex">
+            <!-- <i class="fas fa-hippo"></i> -->
+            <span>ibex</span>
+        </div>
+        <div class="icon top active" onclick="window.location.href='https://mettamine.github.io/ibex/table.html'" title="Table"><i class="fas fa-table"></i></div>
+        <div class="icon top" title="Line"><i class="fas fa-analytics"></i></div>
+        <div class="icon top" onclick="window.location.href='https://mettamine.github.io/ibex/graph.html'" title="Graph"><i class="fas fa-project-diagram"></i></div>
+        <div class="icon top" title="Scatter" onclick="window.location.href='https://mettamine.github.io/ibex/bubble.html'"><i class="fas fa-chart-area"></i></div>
+        <div class="icon top" onclick="window.location.href='https://mettamine.github.io/ibex/map.html'" title="Map"><i class="fas fa-map-marked-alt"></i></div>
+        <div class="icon top" title="Pie"><i class="fas fa-chart-pie"></i></div>
+        <div class="icon-grow"></div>
+        
+        <div class="icon bottom" title="Keywords"><i class="fas fa-quote-right"></i></div>
+        <div class="icon bottom" title="Sources">
+            <!-- <i class="fas fa-spider"></i> -->
+            <i class="fas fa-network-wired"></i>
+        </div>
+        <div class="icon-br"></div>
+        <!-- <i class=""></i> -->
+        <div class="icon bottom user-circle" title="Profile"><i class="fas fa-user-circle"></i></div>
+    </div>
+    <div class="top-bar">
+        <div class="icon" title="Mic"><i class="fas fa-microphone"></i></div>
+        <div class="search-box icon-grow" >
+            <input placeholder="Search the chanels..." autocomplete="off"/>
+            <!-- <div class="input-read">
+                <span class="light">data sources</span>: Publica, Mtavari
+                <span class="light">topics:</span> covid19, Elections, EU
+                <span class="light">people:</span> Giorgi Gakharia, Charles Michel
+                <span class="light">from:</span> Last six month
+            </div> -->
+
+        </div>
+        <div class="icon" title="Download"><i class="fas fa-download"></i></div>
+        <div class="icon" onclick="window.location.href='https://mettamine.github.io/ibex/filter.html'" title="Filters"><i class="fas fa-filter"></i></div>
+    </div>
+
+    <div class="content">
+     
+
+        <!-- Map -->
+        <!-- <div class="line">
+            <select><option>Axis X</option></select>
+            <select><option>Axis Y</option></select>
+            <select><option>Color</option></select>
+        </div>
+        <div id="map" class="sub-content"></div> -->
+        
+
+
+        <!-- Graph -->
+        <!-- <div id="dep-graph sub-content-full" class="sub-content"></div> -->
+        
+
+
+
+        <!-- Table -->
+        <table class='line line-tr dashboard-table-header' cellspacing="0">
+            <tr>
+                <td>Date</td>
+                <td>Channel</td>
+                <td>Title</td>
+                <td>Tags</td>
+                <td><i class="fas fa-thumbs-up"></i></td>
+                <td><i class="fas fa-thumbs-down"></i></td>
+                <td><i class="fas fa-comment"></i></td>
+                <td><i class="fas fa-share"></i></td>
+                <td><i class="fas fa-radiation"></i></td>
+            </tr>
+        </table>
+        <div class="sub-content">
+            <table class="existing-itmes" cellspacing="0">
+                <tr><td class="loader-td">Loading... <div class="loader-cont"><div class="loader"></div></div></td></tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/> 
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.7/d3.min.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/data.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/data/data-sources.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/table.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/map.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/graph.js"></script>
+    <script>
+        const drow_dashboards = () => {
+            // debugger
+            filtered_data = {
+                posts: global_data.posts.filter(post => post.date > global_filters.date.from && post.date < global_filters.date.to &&
+                    global_filters.channels.indexOf(post.channel) > -1 &&
+                    global_filters.topics.filter(value => post.topics.includes(value)).length > 0 &&
+                    global_filters.locations.filter(value => post.locations.includes(value)).length > 0 &&
+                    global_filters.entities.filter(value => post.entities.includes(value)).length > 0 ),
+                channels: global_data.channels.filter(channel => global_filters.channels.indexOf(channel.title) > -1 )
+            }
+            // drow_hate_speech()
+            // drow_chennels_list()
+            // drow_posts_list()
+            drow_sources()
+            // drow_interactions_chart()
+            // drow_map()
+            // drow_dep_chart()
+        }
+    </script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/main.js"></script>
+    <!-- 
+    <script src="/home/mik/Projects/mettamine/dashboard/js/map.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/graph.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/scatter.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/navigation.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/store.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/api.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/routing.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/cc.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/video.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/table.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/filters.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/voice.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/profile.js"></script> -->
+</html>

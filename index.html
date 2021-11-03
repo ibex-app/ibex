@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ibex - Dashboard</title>
+    <!-- <link href="/home/mik/Projects/mettamine/dashboard/css/main.css" rel="stylesheet" type="text/css"> -->
+    <link href="/home/mik/Projects/mettamine/dashboard/css/root.css" rel="stylesheet" type="text/css">
+    <link href="/home/mik/Projects/mettamine/dashboard/css/table.css" rel="stylesheet" type="text/css">
+    <link href="/home/mik/Projects/mettamine/dashboard/css/icon.css" rel="stylesheet" type="text/css">
+    <link href="/home/mik/Projects/mettamine/dashboard/css/top-bar.css" rel="stylesheet" type="text/css">
+    <link href="/home/mik/Projects/mettamine/dashboard/css/left-bar.css" rel="stylesheet" type="text/css">
+    <link href="/home/mik/Projects/mettamine/dashboard/css/inputs.css" rel="stylesheet" type="text/css">
+    <link href="/home/mik/Projects/mettamine/dashboard/css/tags.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    
+</head>
+<body>
+    <div class="left-bar">
+        <div class="icon top logo" title="iBex">
+            <!-- <i class="fas fa-hippo"></i> -->
+            <span>ibex</span>
+        </div>
+        <div class="icon top" title="Table"><i class="fas fa-table"></i></div>
+        <div class="icon top" title="Line"><i class="fas fa-analytics"></i></div>
+        <div class="icon top" title="Graph"><i class="fas fa-project-diagram"></i></div>
+        <div class="icon top" title="Scatter"><i class="fas fa-chart-area"></i></div>
+        <div class="icon top" title="Map"><i class="fas fa-map-marked-alt"></i></div>
+        <div class="icon top" title="Pie"><i class="fas fa-chart-pie"></i></div>
+        <div class="icon-grow"></div>
+        
+        <div class="icon bottom" title="Keywords"><i class="fas fa-quote-right"></i></div>
+        <div class="icon bottom" title="Sources">
+            <!-- <i class="fas fa-spider"></i> -->
+            <i class="fas fa-network-wired"></i>
+        </div>
+        <div class="icon-br"></div>
+        <!-- <i class=""></i> -->
+        <div class="icon bottom user-circle" title="Profile"><i class="fas fa-user-circle"></i></div>
+    </div>
+    <div class="top-bar">
+        <div class="icon" title="Mic"><i class="fas fa-microphone"></i></div>
+        <div class="search-box icon-grow" >
+            <!-- <input placeholder="Search..." autocomplete="off"/> -->
+            <div class="input-read">
+                <span class="light">data sources</span>: Publica, Mtavari
+                <span class="light">topics:</span> covid19, Elections, EU
+                <span class="light">people:</span> Giorgi Gakharia, Charles Michel
+                <span class="light">from:</span> Last six month
+            </div>
+
+        </div>
+        <div class="icon" title="Download"><i class="fas fa-download"></i></div>
+        <div class="icon  active" title="Filters"><i class="fas fa-filter"></i></div>
+    </div>
+    
+    <div class="content">
+        <!-- Filters -->
+        <div class="sub-content sub-content-full sub-content-form">
+            <div class="line">
+                <label for="type">Type:</label>
+                <select id="type">
+                    <option>Video</option>
+                </select>
+            </div>
+            <div class="line">
+                <label for="from">From:</label>
+                <input id="from" type="date" />
+                <label for="to">To:</label>
+                <input id="to" type="date" />
+            </div>
+            <div class="line">
+                <label for="platform">Platform:</label>
+                <select id="platform">
+                    <option>Facebook</option>
+                    <option>Youtube</option>
+                    <option>Twitter</option>
+                    <option>TV</option>
+                </select>
+                <label for="data-sources">Data Source:</label>
+                <select id="data-sources">
+                    <option>BBC</option>
+                </select>
+            </div>
+            <div class="line">
+                <label for="topics">Topic:</label>
+                <select id="topics">
+                    <option>COVID19</option>
+                </select>
+
+                <label for="contains">Text Contains:</label>
+                <input id="contains" />
+            </div>
+            <div class="line">
+                <label for="person">Person:</label>
+                <select id="person">
+                    <option>Barak Obama</option>
+                </select>
+                <label for="location">Location:</label>
+                <select id="location">
+                    <option>Kharabakh Border</option>
+                </select>
+            </div>
+            <div class="line">
+                <label for="object">Object:</label>
+                <select id="object">
+                    <option>EU Flag</option>
+                </select>
+                <label for="organization">Organization:</label>
+                <select id="organization">
+                    <option>NATO</option>
+                </select>
+            </div>
+            <div class="line">
+                <label for="event">Event:</label>
+                <select id="event">
+                    <option>War in Syria</option>
+                </select>
+                <label for="document">Document:</label>
+                <select id="document">
+                    <option>Agreement 2021.06.02</option>
+                </select>
+            </div>
+            <div class="line">
+                <label for="facility">Facility:</label>
+                <select id="facility">
+                    <option>White House</option>
+                </select>
+            </div>
+            <div class="line">
+                <label for="hate-speech">Contains Hate Speech:</label>
+                <select id="hate-speech">
+                    <option>Toxic</option>
+                </select>
+            </div>
+            <div class="line">
+                <label for="sentiment">Sentiment:</label>
+                <select id="sentiment">
+                    <option>Positive</option>
+                </select>
+                <label for="orient">Mood:</label>
+                <select id="orient">
+                    <option>Anti West</option>
+                </select>
+            </div>
+            
+        </div>
+        
+
+<!-- interactions
+
+
+hate-speech - target
+
+GPE: Countries, cities, states
+MONEY: Monetary values, including unit
+NORP: Nationalities or religious or political groups
+PRODUCT: Vehicles, weapons, foods, etc. (Not services
+
+likes/dislikes
+
+anti-gov / anti-opo
+
+anti-west / pro-west
+
+sentiment
+
+Terorism
+
+Gender based discrimination -->
+
+
+
+        <!-- Map -->
+        <!-- <div class="line">
+            <select><option>Axis X</option></select>
+            <select><option>Axis Y</option></select>
+            <select><option>Color</option></select>
+        </div>
+        <div id="map" class="sub-content"></div> -->
+        
+
+
+        <!-- Graph -->
+        <!-- <div id="dep-graph sub-content-full" class="sub-content"></div> -->
+        
+
+
+
+        <!-- Table -->
+        <!-- <table class='line line-tr dashboard-table-header' cellspacing="0">
+            <tr>
+                <td>Date</td>
+                <td>Title</td>
+                <td>Channel</td>
+                <td>Topics</td>
+                <td>People Mentioned</td>
+                <td>People Deteted</td>
+                <td>Symbols</td>
+                <td><i class="fas fa-thumbs-up"></i></td>
+                <td><i class="fas fa-thumbs-down"></i></td>
+                <td><i class="fas fa-comment"></i></td>
+                <td><i class="fas fa-share"></i></td>
+                <td><i class="fas fa-radiation"></i></td>
+            </tr>
+        </table>
+        <div class="sub-content">
+            <table class="existing-itmes" cellspacing="0">
+                <tr><td>Loading...</td></tr>
+            </table>
+        </div> -->
+    </div>
+</body>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/> 
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.7/d3.min.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/data.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/table.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/map.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/graph.js"></script>
+    <script>
+        const drow_dashboards = () => {
+            // debugger
+            filtered_data = {
+                posts: global_data.posts.filter(post => post.date > global_filters.date.from && post.date < global_filters.date.to &&
+                    global_filters.channels.indexOf(post.channel) > -1 &&
+                    global_filters.topics.filter(value => post.topics.includes(value)).length > 0 &&
+                    global_filters.locations.filter(value => post.locations.includes(value)).length > 0 &&
+                    global_filters.entities.filter(value => post.entities.includes(value)).length > 0 ),
+                channels: global_data.channels.filter(channel => global_filters.channels.indexOf(channel.title) > -1 )
+            }
+            // drow_hate_speech()
+            // drow_chennels_list()
+            // drow_posts_list()
+            // drow_interactions_chart()
+            // drow_map()
+            // drow_dep_chart()
+        }
+    </script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/main.js"></script>
+    <!-- 
+    <script src="/home/mik/Projects/mettamine/dashboard/js/map.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/graph.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/scatter.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/navigation.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/store.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/api.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/routing.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/cc.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/video.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/table.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/filters.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/voice.js"></script>
+    <script src="/home/mik/Projects/mettamine/dashboard/js/profile.js"></script> -->
+</html>
